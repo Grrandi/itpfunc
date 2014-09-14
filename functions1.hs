@@ -19,6 +19,16 @@ test a b c = (c + (a / b))
 monthsTillMonnies :: Double -> Double -> Double -> Int
 monthsTillMonnies goal income expenses = ceiling nonroundup 
 	where 
-		nonroundup = goal / (income - expenses)
+	nonroundup = goal / (income - expenses)
 
+
+-- Examples
+-- monthsTillMonnies 2000 400 300 = 20
+-- monthsTillMOnnies 300 400 68 = 1
+
+-- monthsTillMonnies 300 400 68
+-- == {- Resolves nonroundup: goal / (income - expenses) -}
+-- ceiling nonroundup
+-- == {- ceiling 0,903614458 -}
+-- 1
 
