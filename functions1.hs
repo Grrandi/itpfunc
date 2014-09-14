@@ -77,7 +77,7 @@ rectangleArea sidea sideb = sidea*sideb
 -- == {- calculate area: 20*15 -}
 -- 300
 
---/ Vomits domain from url
+-- / Vomits domain from url
 cleanUrl :: String -> String
 cleanUrl url = cleanedUrl
 	where
