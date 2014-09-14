@@ -64,10 +64,10 @@ circleArea diameter = pi * (diameter/2)**2
 -- == {- raise to exponent -}
 -- pi * 100
 -- == {- calculate area -}
--- 314 ja jämät
+-- 314 ja j\E4m\E4t
 
 -- / Calculates the area of a rectangle
-rectangleArea Double -> Double -> Double
+rectangleArea :: Double -> Double -> Double
 rectangleArea sidea sideb = sidea*sideb
 
 -- Examples
@@ -77,3 +77,9 @@ rectangleArea sidea sideb = sidea*sideb
 -- == {- calculate area: 20*15 -}
 -- 300
 
+
+cleanUrl :: String -> String
+cleanUrl url = cleanedUrl
+	where
+	startCleaned = dropWhile ('w'>) url
+	cleanedUrl = takeWhile (/='/') startCleaned
