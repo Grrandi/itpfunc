@@ -48,3 +48,14 @@ circleArea diameter = pi * (diameter/2)**2
 -- pi * 100
 -- == {- calculate area -}
 -- 314 ja jämät
+
+-- / Calculates the area of a rectangle
+rectangleArea Double -> Double -> Double
+rectangleArea sidea sideb = sidea*sideb
+
+-- Examples
+-- rectangeArea 20 15 = 300
+
+-- rectangleArea 20 15
+-- == {- calculate area: 20*15 -}
+-- 300
