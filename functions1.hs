@@ -32,3 +32,19 @@ monthsTillMonnies goal income expenses = ceiling nonroundup
 -- == {- ceiling 0,903614458 -}
 -- 1
 
+
+
+-- / Calculates the area of a circle based on it's diameter
+circleArea :: Double -> Double
+circleArea diameter = pi * (diameter/2)**2
+
+-- Examples
+-- circleArea 20 = 314 ja roippeet
+
+-- circleArea 20
+-- == {- calculate radius diameter/2 -}
+-- pi * 10**2
+-- == {- raise to exponent -}
+-- pi * 100
+-- == {- calculate area -}
+-- 314 ja jämät
