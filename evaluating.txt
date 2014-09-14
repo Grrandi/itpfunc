@@ -1,0 +1,27 @@
+areaOfBigCircle  =  pi * 10 ** 2
+{- Calculate  3.141592653589793 * 10 = 31.41592653589793 -}
+31.41592653589793 ** 2
+{- Calculate pow  31.41592653589793 ** 2 -}
+314.1592653589793
+
+enthusiasticGreeting = greeting ++ "!"
+== {- add two strings together: "Hello" ++ "Jill" -}
+"Hello Jill" ++ "!"
+== {- add last string: -}
+"Hello Jill!"
+
+greeting ++ "," ++ enthusiasticGreeting
+== {- resolve greeting: "Hello" ++ "Jill" -}
+"Hello Jill" ++ "," ++ enthsiasticGreeting
+== {- append comma: "Hello Jill" ++ "," -}
+"Hello Jill," ++ enthusiasticGreeting
+== {- resolve enthusiasticGreeting -}
+Hello Jill," ++ "Hello Jill!"
+== {- join strings: "Hello Jill," ++ "Hello Jill!" -}
+"Hello Jill,Hello Jill!"
+
+greeting ++ x
+== {- resolve greeting: "Hello" ++ "Jill" -}
+"Hello Jill" ++ x
+== {- append x to string: "Hello Jill" ++ x -}
+Crash boom plox, noscope error is singin opera since x is not defined
