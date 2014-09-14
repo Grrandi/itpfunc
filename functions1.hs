@@ -77,9 +77,18 @@ rectangleArea sidea sideb = sidea*sideb
 -- == {- calculate area: 20*15 -}
 -- 300
 
-
+--/ Vomits domain from url
 cleanUrl :: String -> String
 cleanUrl url = cleanedUrl
 	where
 	startCleaned = dropWhile ('w'>) url
 	cleanedUrl = takeWhile (/='/') startCleaned
+
+-- Examples
+-- cleanUrl http://www.google.fi/asd/asd/asd = www.google.fi
+
+-- cleanUrl http://www.google.fi/asdasdasd/perse
+-- == {- drop http:// : takeWhile (/='/') startCleaned -}
+-- www.google.fi/asdasdasd/perse
+-- == {- take until first / is seen: takeWhile (/='/') www.google.fi/asdasdasd/perse
+-- www.google.fi
