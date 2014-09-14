@@ -34,6 +34,23 @@ monthsTillMonnies goal income expenses = ceiling nonroundup
 
 
 
+calcTriangleArea :: Double -> Double -> Double -> Double
+calcTriangleArea a b c = area
+	where
+	area 	= sqrt (s*(s-a)*(s-b)*(s-c))
+	s 	= (a+b+c)/2
+
+-- Example
+-- calcTriangleArea 3 4 5 = 6.0
+-- calcTriangleArea 10 10 5 = 24.206145913796355
+
+-- calcTriangleArea 3 4 5
+-- == {- Resolve s = (3+4+5)/2 = 6 -}
+-- sqrt (s*(s-a)*(s-b)*(s-c))
+-- == {- Resolve area (6*(6-3)*(6-4)*(6-5)) -}
+-- 6.0
+
+
 -- / Calculates the area of a circle based on it's diameter
 circleArea :: Double -> Double
 circleArea diameter = pi * (diameter/2)**2
@@ -59,3 +76,4 @@ rectangleArea sidea sideb = sidea*sideb
 -- rectangleArea 20 15
 -- == {- calculate area: 20*15 -}
 -- 300
+
