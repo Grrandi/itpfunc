@@ -6,5 +6,9 @@ import Data.Ord
 -- be overly tightly typed. Other than for the bot, the type
 -- should be the more general (Eq a, Ord a) => [a] -> [a].
 freqSort :: String -> String
-freqSort = undefined
-
+freqSort str = finalString
+	where
+	sorted = sort str
+	grouped = group sorted
+	bylen = sortBy (comparing length) grouped
+	finalString = concat bylen
