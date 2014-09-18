@@ -12,26 +12,30 @@ numOfLines str = length (lines str)
 -- == {- calculate number of lines -}
 -- 2
 
-test :: Double -> Double -> Double -> Double 
-test a b c = (c + (a / b))
 
 -- / Calculates months that it takes to save monnies
-monthsTillMonnies :: Double -> Double -> Double -> Int
-monthsTillMonnies goal income expenses = ceiling nonroundup 
+monthsTillMonnies :: Double -> Double -> Double -> String 
+monthsTillMonnies goal income expenses = nonroundup 
 	where 
-	nonroundup = goal / (income - expenses)
+    nonroundup = if (income - expenses) <= 0 
+        then "You are loosing money every month! You are unable to save any money."
+	    else "You can save the money in " ++ show (ceiling (goal / (income - expenses))) ++ " months."
 
 
 -- Examples
 -- monthsTillMonnies 2000 400 300 = 20
--- monthsTillMOnnies 300 400 68 = 1
+-- monthsTillMonnies 2999 300 1000 = You are loosing money every month! You are unable to save any money.
+-- monthsTillMonnies 300 400 68 = You can save the money in 1 months.
 
 -- monthsTillMonnies 300 400 68
--- == {- Resolves nonroundup: goal / (income - expenses) -}
--- ceiling nonroundup
--- == {- ceiling 0,903614458 -}
--- 1
-
+-- == {- Resolve if statement (income - expenses) <= 0 goto else if bigger than zero -} 
+-- else "You can save the money in " ++ show (ceiling (goal / (income - expenses))) ++ " months."
+-- == {- Resolve (ceiling (goal / (income - expenses))) -}
+-- 300 / (400 - 68) 
+-- == {- Resolves nonroundup: "You can save the money in " ++ show (ceiling 0.903614458) ++ " months."
+-- ceiling 0.903614458
+-- == {- Form the string:  "You can save the money in " ++ show 1 ++ " months." -}
+-- You can save the money in 1 months.
 
 
 calcTriangleArea :: Double -> Double -> Double -> Double
@@ -81,14 +85,14 @@ rectangleArea sidea sideb = sidea*sideb
 cleanUrl :: String -> String
 cleanUrl url = cleanedUrl
 	where
-	startCleaned = dropWhile ('w'>) url
+	startCleaned = dropWhile (/='w') url
 	cleanedUrl = takeWhile (/='/') startCleaned
 
 -- Examples
 -- cleanUrl http://www.google.fi/asd/asd/asd = www.google.fi
 
--- cleanUrl http://www.google.fi/asdasdasd/perse
+-- cleanUrl http://www.google.fi/asdasdasd/kukkanen
 -- == {- drop http:// : takeWhile (/='/') startCleaned -}
--- www.google.fi/asdasdasd/perse
--- == {- take until first / is seen: takeWhile (/='/') www.google.fi/asdasdasd/perse
+-- www.google.fi/asdasdasd/kukkanen
+-- == {- take until first / is seen: takeWhile (/='/') www.google.fi/asdasdasd/kukkanen
 -- www.google.fi

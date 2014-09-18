@@ -1,8 +1,8 @@
 areaOfBigCircle  =  pi * 10 ** 2
-{- Calculate  3.141592653589793 * 10 = 31.41592653589793 -}
-31.41592653589793 ** 2
-{- Calculate pow  31.41592653589793 ** 2 -}
-314.1592653589793
+== {- solve:  3.141592653589793 * 10 }
+areaOfBigCircle = 31.41592653589793 ** 2
+== {- solve: 31.41592653589793 ** 2 -}
+areaOfBigCircle = 986.9604401089358
 
 enthusiasticGreeting = greeting ++ "!"
 == {- add two strings together: "Hello" ++ "Jill" -}
